@@ -15,9 +15,9 @@ import java.util.List;
 
 public class VisitanteDAO {
 
-    private Connection conexao = null;
-    private Statement operacao = null;
-    private ResultSet resultado = null;
+    private static Connection conexao = null;
+    private static Statement operacao = null;
+    private static ResultSet resultado = null;
 
     public VisitanteDAO() throws ClassNotFoundException, SQLException {
 
@@ -31,20 +31,20 @@ public class VisitanteDAO {
         return true;
     }
 
-    public boolean novoVisitante(Visitante visitante) throws ClassNotFoundException, SQLException {
+    public static void novoVisitante(Visitante visitante) throws ClassNotFoundException, SQLException {
 
         String nome = visitante.getNome();
         int idade = visitante.getIdade();
-        Timestamp entrada = visitante.getEntrada();
-        Timestamp saida = visitante.getSaida();
+        //Timestamp entrada = visitante.getEntrada();
+        //Timestamp saida = visitante.getSaida();
 
         try {
             operacao.executeUpdate("INSERT INTO visitante(nome, idade, entrada, saida) VALUES('"
-                    + nome + "', " + idade + ", '" + entrada + "', '" + saida + "') ");
-            return true;
+                    + nome + "', " + idade + ") ");
+            //return true;
 
         } catch (SQLException e) {
-            return false;
+            //return false;
         }
 
     }
@@ -75,7 +75,7 @@ public class VisitanteDAO {
         return true;
     }
 
-    public boolean listarVisitante() throws SQLException, ClassNotFoundException {
+    public static List<Visitante> listarVisitante() throws SQLException, ClassNotFoundException {
 
         List<Visitante> visitantes = new ArrayList<>();
 
@@ -91,7 +91,7 @@ public class VisitanteDAO {
             visitantes.add(visitanteAtual);
         }
 
-        return true;
+        return visitantes;
 
     }
 }
