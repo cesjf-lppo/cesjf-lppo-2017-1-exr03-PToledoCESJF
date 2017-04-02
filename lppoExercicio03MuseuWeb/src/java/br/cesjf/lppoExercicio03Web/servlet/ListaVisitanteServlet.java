@@ -2,7 +2,6 @@ package br.cesjf.lppoExercicio03Web.servlet;
 
 import br.cesjf.lppoExercicio03Web.Dados.*;
 import java.io.IOException;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -22,17 +21,16 @@ public class ListaVisitanteServlet extends HttpServlet {
         
         List<Visitante> lstVisitantes = new ArrayList<>();
         
-        try {
+        try { 
             
             lstVisitantes = VisitanteDAO.listarVisitante();
-            
+
         } catch (Exception ex) {
             Logger.getLogger(ListaVisitanteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
         
         request.setAttribute("lstVisitantes", lstVisitantes);
         request.getRequestDispatcher("WEB-INF/listaVisitantes.jsp").forward(request, response);
-             
     }
 
 }

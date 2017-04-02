@@ -37,10 +37,14 @@ public class NovoVisitanteServlet extends HttpServlet {
         novoVisitante.setIdade(Integer.parseInt(request.getParameter("txtIdade")));
         
         try {
+            
             VisitanteDAO.novoVisitante(novoVisitante);
+        
         } catch (Exception ex) {
             Logger.getLogger(NovoVisitanteServlet.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        response.sendRedirect("lista.html");
               
     }
 

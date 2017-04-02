@@ -19,6 +19,7 @@ public class ConexaoBD {
             
             Class.forName("org.apache.derby.jdbc.ClientDriver");
             conexao = DriverManager.getConnection(url, "usuario", "senha");
+           
         }
          
         return conexao;

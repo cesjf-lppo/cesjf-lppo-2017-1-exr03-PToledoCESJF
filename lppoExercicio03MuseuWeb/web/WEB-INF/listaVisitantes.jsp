@@ -14,16 +14,18 @@
                 <th>Id</th>
                 <th>Nome</th>
                 <th>Idade</th>
-                <th>Entrad</th>
+                <th>Entrada</th>
                 <th>Saida</th>
             </tr>
-            <c:forEach var="visitantes" items="lstVisitantes">
+            <c:forEach var="visitantes" items="${lstVisitantes}">
                 <tr>
-                    <td>${visitante.id}</td>
-                    <td>${visitante.nome}</td>
-                    <td>${visitante.idade}</td>
-                    <td>${visitante.entrada}</td>
-                    <td>${visitante.saida}</td>
+                    <td><a href="edita.html?id=${visitantes.id}">${visitantes.id}</td>
+                    <td>${visitantes.nome}</td>
+                    <td>${visitantes.idade}</td>
+                    <td>${visitantes.entrada}</td>
+                    <td>${visitantes.saida}</td>
+                    <td><a href="saida.html?id=${visitantes.id}">Sair</a></td>
+                    <td><a href="excluir.html?id=${visitantes.id}">X</a></td>
                 </tr>
             </c:forEach>
         </table>

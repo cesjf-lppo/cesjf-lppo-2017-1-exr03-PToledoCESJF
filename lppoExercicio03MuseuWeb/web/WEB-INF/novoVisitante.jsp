@@ -7,11 +7,9 @@
     </head>
     <body>
         <h1>Novo Visitante!</h1>
-        <form action="novo.html" method="POST">
+        <form action="" method="POST">
             <p><label>Nome:</label><input type="text" name="txtNome" size="40" /></p>
             <p><label>Idade:</label><input type="text" name="txtIdade" size="40" /></p>
-            <p><label>Entrada:</label><input type="text" name="txtEntrada" size="40" /></p>
-            <p><label>Saida:</label><input type="text" name="txtSaida" size="40" /></p>
             <input type="submit" value="Salvar" />
         </form>
     </body>
