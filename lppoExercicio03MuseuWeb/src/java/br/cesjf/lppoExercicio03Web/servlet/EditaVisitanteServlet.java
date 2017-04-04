@@ -53,8 +53,8 @@ public class EditaVisitanteServlet extends HttpServlet {
             visitanteEditado.setId(Long.parseLong(request.getParameter("txtId")));
             visitanteEditado.setNome(request.getParameter("txtNome"));
             visitanteEditado.setIdade(Integer.parseInt(request.getParameter("txtIdade")));
-            visitanteEditado.setEntrada((Timestamp) formataData.parse(request.getParameter("txtEntrada")));
-            visitanteEditado.setSaida((Timestamp) formataData.parse(request.getParameter("txtSaida")));
+            visitanteEditado.setEntrada( formataData.parse(request.getParameter("txtEntrada")));
+            visitanteEditado.setSaida(formataData.parse(request.getParameter("txtSaida")));
             
             VisitanteDAO.editarVisitante(visitanteEditado);
             

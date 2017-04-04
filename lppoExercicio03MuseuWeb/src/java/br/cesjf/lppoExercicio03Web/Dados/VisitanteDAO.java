@@ -5,6 +5,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.sql.Timestamp;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -13,6 +14,8 @@ import java.util.List;
  * @author aluno
  */
 public class VisitanteDAO {
+    
+    SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     private static Connection conexao = null;
     private static Statement operacao = null;
@@ -77,7 +80,7 @@ public class VisitanteDAO {
             operacao.executeUpdate("UPDATE visitante SET nome= '"
                     + visitante.getNome() + "', idade= "
                     + visitante.getIdade() + ", entrada= '"
-                    + visitante.getEntrada() + "', saida='"
+                    + formataData.format(visitante.getEntrada()) + "', saida='"
                     + visitante.getSaida() + "' WHERE id=" + visitante.getId());
 
         }

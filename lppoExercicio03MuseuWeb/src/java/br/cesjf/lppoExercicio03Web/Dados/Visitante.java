@@ -1,6 +1,7 @@
 package br.cesjf.lppoExercicio03Web.Dados;
 
 import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  *
@@ -10,8 +11,8 @@ public class Visitante {
     private Long id;
     private String nome;
     private int idade;
-    private Timestamp entrada;
-    private Timestamp saida;
+    private Date entrada;
+    private Date saida;
 
     public Visitante() {
     }
@@ -40,19 +41,19 @@ public class Visitante {
         this.idade = idade;
     }
 
-    public Timestamp getEntrada() {
+    public Date getEntrada() {
         return entrada;
     }
 
-    public void setEntrada(Timestamp entrada) {
+    public void setEntrada(Date entrada) {
         this.entrada = entrada;
     }
 
-    public Timestamp getSaida() {
+    public Date getSaida() {
         return saida;
     }
 
-    public void setSaida(Timestamp saida) {
+    public void setSaida(Date saida) {
         this.saida = saida;
     }
 
