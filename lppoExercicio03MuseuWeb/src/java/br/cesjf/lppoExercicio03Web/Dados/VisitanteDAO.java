@@ -15,7 +15,7 @@ import java.util.List;
  */
 public class VisitanteDAO {
     
-    SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+    public static SimpleDateFormat formataData = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
 
     private static Connection conexao = null;
     private static Statement operacao = null;
@@ -81,7 +81,7 @@ public class VisitanteDAO {
                     + visitante.getNome() + "', idade= "
                     + visitante.getIdade() + ", entrada= '"
                     + formataData.format(visitante.getEntrada()) + "', saida='"
-                    + visitante.getSaida() + "' WHERE id=" + visitante.getId());
+                    + formataData.format(visitante.getSaida()) + "' WHERE id=" + visitante.getId());
 
         }
     }
